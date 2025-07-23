@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tặng emiu Dương Kiều Vỹ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f06, #ff9e7a);
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            font-size: 2em;
+            animation: pulse 2s infinite;
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #ff3b3b;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                color: #ff6b6b;
+            }
+            50% {
+                transform: scale(1.1);
+                color: #ff3b3b;
+            }
+        }
+        
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in-out;
+        }
+        
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+        
+        .bubble:nth-child(2) {
+            left: 20%;
+            animation-duration: 12s;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .bubble:nth-child(3) {
+            left: 40%;
+            animation-duration: 14s;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .bubble:nth-child(4) {
+            left: 60%;
+            animation-duration: 16s;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .bubble:nth-child(5) {
+            left: 80%;
+            animation-duration: 18s;
+            width: 25px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <div class="container">
+        <h1>Tặng Bạn Yêu</h1>
+        <p>Anh có một bất ngờ, em có muốn xem không?</p>
+        <button onclick="askToPlaySong(true)">Có</button>
+        <button onclick="askToPlaySong(false)">Không</button>
+        <audio id="song" src="anhhat.mp3"></audio>
+    </div>
+
+    <script>
+        function askToPlaySong(isAccepted) {
+            if (isAccepted) {
+                openSurpriseTab();
+            } else {
+                alert("Không xem cũng phải xem!");
+                openSurpriseTab();
+            }
+        }
+
+        function openSurpriseTab() {
+            const newTab = window.open('surprise.html', '_blank');
+            if (!newTab) {
+                alert("Vui lòng cho phép cửa sổ bật lên để xem thông điệp.");
+            }
+        }
+    </script>
+</body>
+
+</html>

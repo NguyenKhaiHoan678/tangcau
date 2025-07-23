@@ -1,0 +1,8 @@
+myenv/
+
+# Bỏ qua VSCode settings
+.vscode/
+
+# Bỏ qua cache Python
+__pycache__/
+*.pyc
